@@ -7,8 +7,17 @@ other context where converting from `.p8` to `.js` is useful.
 
 ## CLI Usage
 
+With `npx`:
+
 ```console
 npx p8-to-js cart.p8 cart.js
+```
+
+Using `npm install`:
+
+```console
+npm install -g p8-to-js
+p8-to-js cart.p8 cart.js
 ```
 
 ## CLI Options
