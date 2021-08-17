@@ -3,13 +3,13 @@ const path = require('path');
 const util = require('util');
 
 const p8tojs = {
-    async convertFile(inputFile, outputFile, options) {
+    async convertFile(inputFile, outputFile, options = {}) {
         const input = await fs.promises.readFile(inputFile, 'utf8');
         const output = `// ${path.basename(inputFile)}\n` + this.convert(input, options);
         await fs.promises.writeFile(outputFile, output, 'utf8');
     },
 
-    convertFileSync(inputFile, outputFile, options) {
+    convertFileSync(inputFile, outputFile, options = {}) {
         const input = fs.readFileSync(inputFile, 'utf8');
         const output = `// ${path.basename(inputFile)}\n` + this.convert(input, options);
         fs.writeFileSync(outputFile, output, 'utf8');
@@ -18,9 +18,8 @@ const p8tojs = {
     /**
      * Converts an input PICO-8 cartridge string into a JS/JSON output.
      */
-    convert(input, options) {
+    convert(input, options = {}) {
         let sections = this._bySection(input);
-        console.log(input, options);
 
         if (options.sections && options.sections.length > 0) {
             sections = options.sections.reduce((hash, key) => {
