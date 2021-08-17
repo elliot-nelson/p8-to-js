@@ -190,3 +190,11 @@ export const Song = { sfx: 'ARaplo532AARRJara3==', music: 'ARJvvAAAAAAAA=' };
 ## Contributing
 
 Pull requests welcome!
+
+To run unit tests locally:
+
+```console
+npm install
+npm test
+```
+
