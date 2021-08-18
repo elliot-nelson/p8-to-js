@@ -30,7 +30,7 @@ const p8tojs = {
 
         if (options.encoding === 'base64') {
             for (let key of Object.keys(sections)) {
-                sections[key] = Buffer.from(sections[key], 'hex').toString('base64');
+                sections[key] = sections[key].split('\n').map(line => Buffer.from(line, 'hex').toString('base64')).join('\n');
             }
         }
 

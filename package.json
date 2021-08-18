@@ -1,6 +1,6 @@
 {
   "name": "p8-to-js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Convert .p8 files to .js files for use in other projects.",
   "main": "index.js",
   "bin": "cli.js",
